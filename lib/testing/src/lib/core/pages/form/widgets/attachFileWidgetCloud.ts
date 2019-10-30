@@ -43,16 +43,9 @@ export class AttachFileWidgetCloud {
     }
 
     async clickAttachContentFile(fileId: string): Promise<void> {
-        await this.waitForWidgetClickable();
-        const uploadButton = element(by.css(`button[id=${fileId}]`)),
-            dropdownFile = element(by.css('.adf-attach-widget__menu-content button[id="attach-Alfresco Content"]'));
+        const uploadButton = this.widget.element(by.css(`button[id=${fileId}]`));
         await BrowserActions.click(uploadButton);
-        await BrowserActions.click(dropdownFile);
-    }
-
-    async waitForWidgetClickable() {
-        await BrowserVisibility.waitUntilElementIsPresent(this.widget);
-        await BrowserVisibility.waitUntilElementIsClickable(this.widget);
+        await BrowserActions.clickExecuteScript('button[id="attach-Alfresco Content"]');
     }
 
     async checkUploadContentButtonIsDisplayed(fileId: string): Promise<void> {
