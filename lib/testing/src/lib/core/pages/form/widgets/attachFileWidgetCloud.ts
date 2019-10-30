@@ -44,8 +44,9 @@ export class AttachFileWidgetCloud {
 
     async clickAttachContentFile(fileId: string): Promise<void> {
         const uploadButton = this.widget.element(by.css(`button[id=${fileId}]`));
+        const popOverMenu = element(by.css(`.mat-menu-content button[id="attach-Alfresco Content"]`));
         await BrowserActions.click(uploadButton);
-        await BrowserActions.clickExecuteScript('button[id="attach-Alfresco Content"]');
+        await BrowserActions.click(popOverMenu);
     }
 
     async checkUploadContentButtonIsDisplayed(fileId: string): Promise<void> {
