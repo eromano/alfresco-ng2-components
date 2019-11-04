@@ -33,6 +33,7 @@
 @import '../login/components/login-dialog.component';
 @import '../login/components/login-dialog-panel.component';
 @import '../../core/clipboard/clipboard.component';
+@import '../../core/search-text/search-text.component';
 @import './snackbar';
 
 @mixin adf-core-theme($theme) {
@@ -70,4 +71,5 @@
     @include adf-sidenav-layout-theme($theme);
     @include adf-clipboard-theme($theme);
     @include adf-snackbar-theme($theme);
+    @include adf-search-text-theme($theme);
 }
