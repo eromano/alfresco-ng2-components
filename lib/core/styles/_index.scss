@@ -72,4 +72,5 @@
     @include adf-clipboard-theme($theme);
     @include adf-snackbar-theme($theme);
     @include adf-search-text-input-theme($theme);
+    @include mat-expansion-panel-theme--fix($theme);
 }
